@@ -1,0 +1,93 @@
+﻿@model Manager_SIMS.Models.Course
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-fluid {
+            flex: 1;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 88%;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white text-center p-3">
+        <h1>
+            Information Management System (SIMS)
+        </h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 bg-light sidebar py-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="List" asp-controller="Course">Manager Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="List" asp-controller="Enrollment">Assignment Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Login" asp-controller="Account">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Main content -->
+            <main class="col-md-10 p-4">
+                <table class="table table-striped">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3>Manager Courses </h3>
+                    </div>
+                    <form asp-action="Edit" method="post">
+                        <div class="form-group mb-2">
+                            <label asp-for="CourseName"></label>
+                            <input asp-for="CourseName" class="form-control" />
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Description"></label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Credits"></label>
+                            <input asp-for="Credits" type="number" class="form-control" />
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Semester"></label>
+                            <select asp-for="Semester" class="form-control">
+                                <option value="Fall 25">Fall 25</option>
+                                <option value="Spring 25">Spring 25</option>
+                                <option value="Summer 25">Summer 25</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </form>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer class="bg-dark text-white d-flex align-items-center justify-content-center py-3 mt-2" style="height: 50px;">
+        <p>&copy; 2025 Management System (SIMS). All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
