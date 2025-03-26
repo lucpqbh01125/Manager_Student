@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Manager_SIMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e36fbeb471202b655de13ee8156a81b72600233")]
 [assembly: System.Reflection.AssemblyProductAttribute("Manager_SIMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Manager_SIMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

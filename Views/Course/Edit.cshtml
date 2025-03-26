@@ -59,6 +59,7 @@
                         <h3>Manager Courses </h3>
                     </div>
                     <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="CourseId" />
                         <div class="form-group mb-2">
                             <label asp-for="CourseName"></label>
                             <input asp-for="CourseName" class="form-control" />
