@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\APDP\\Manager_SIMS\\Manager_SIMS.csproj": {}
+    "D:\\Manager_SIMS\\Manager_SIMS.csproj": {}
   },
   "projects": {
-    "D:\\APDP\\Manager_SIMS\\Manager_SIMS.csproj": {
+    "D:\\Manager_SIMS\\Manager_SIMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\APDP\\Manager_SIMS\\Manager_SIMS.csproj",
+        "projectUniqueName": "D:\\Manager_SIMS\\Manager_SIMS.csproj",
         "projectName": "Manager_SIMS",
-        "projectPath": "D:\\APDP\\Manager_SIMS\\Manager_SIMS.csproj",
+        "projectPath": "D:\\Manager_SIMS\\Manager_SIMS.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\APDP\\Manager_SIMS\\obj\\",
+        "outputPath": "D:\\Manager_SIMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
