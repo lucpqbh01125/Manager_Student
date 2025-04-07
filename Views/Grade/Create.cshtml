@@ -67,18 +67,19 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <label asp-for="EnrollmentId" class="control-label">Enroollment ID</label>
-                        <input asp-for="EnrollmentId" class="form-control" />
+                        <label asp-for="EnrollmentId" class="control-label">Student & Course</label>
+                        <select asp-for="EnrollmentId" asp-items="ViewBag.Enrollments" class="form-control">
+                            <option value="">-- Select Student & Course --</option>
+                        </select>
                     </div>
 
-                    <div class="form-group mb-2">
-                        <label asp-for="FacultyId" class="control-label">Faculty ID</label>
-                        <input asp-for="FacultyId" class="form-control" />
-                    </div>
+                    <input type="hidden" asp-for="FacultyId" value="@ViewBag.FacultyId" /> <!-- FacultyId tự động gán -->
+
                     <div class="form-group mb-2">
                         <button type="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>
+
             </main>
         </div>
     </div>

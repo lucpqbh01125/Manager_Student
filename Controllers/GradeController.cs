@@ -44,22 +44,41 @@ namespace Manager_SIMS.Controllers
 
         public IActionResult Create()
         {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); // Lấy ID giáo viên đăng nhập
+
+            var enrollments = _context.Enrollments
+                .Include(e => e.Student)
+                .Include(e => e.Course)
+                .ToList()
+                .Select(e => new SelectListItem
+                {
+                    Value = e.EnrollmentId.ToString(),
+                    Text = $"{e.Student.FullName} - {e.Course.CourseName}"
+                }).ToList();
+
+            ViewBag.Enrollments = enrollments; // Truyền danh sách Enrollment ra View
+            ViewBag.FacultyId = userId; // Gán mặc định FacultyId
+
             return View();
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Create(Grade grade)
         {
             if (ModelState.IsValid)
             {
-                grade.GradedAt = DateTime.Now; // ✅ Đảm bảo cột GradedAt có giá trị
+                grade.FacultyId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); // Tự động lấy ID giáo viên đăng nhập
+                grade.GradedAt = DateTime.UtcNow;
 
                 _context.Grades.Add(grade);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("List");
             }
+
             return View(grade);
         }
+
 
         public async Task<IActionResult> Edit(int id)
         {

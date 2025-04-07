@@ -18,7 +18,7 @@ namespace Manager_SIMS.Models
         [StringLength(255)]
         public string? Feedback { get; set; }
 
-        [Required] // ✅ Bắt buộc nhập giá trị, tránh NULL
+        [Required] 
         public DateTime GradedAt { get; set; } = DateTime.UtcNow;
 
         // Khóa ngoại
