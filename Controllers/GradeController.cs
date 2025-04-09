@@ -20,9 +20,7 @@ namespace Manager_SIMS.Controllers
         }
 
         public async Task<IActionResult> List()
-        {
-            //var grades = await _context.Grades.Include(g => g.Faculty).ToListAsync();
-            //return View(grades);
+        {        
             var viewModel = new GradeViewModel
             {
                 Grades = _context.Grades
@@ -44,7 +42,7 @@ namespace Manager_SIMS.Controllers
 
         public IActionResult Create()
         {
-            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); // Lấy ID giáo viên đăng nhập
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); 
 
             var enrollments = _context.Enrollments
                 .Include(e => e.Student)
@@ -68,7 +66,7 @@ namespace Manager_SIMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                grade.FacultyId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); // Tự động lấy ID giáo viên đăng nhập
+                grade.FacultyId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 grade.GradedAt = DateTime.UtcNow;
 
                 _context.Grades.Add(grade);

@@ -20,8 +20,6 @@ namespace Manager_SIMS.Controllers
             return View(courses);
         }
 
-
-
         [HttpGet]
         public IActionResult Create()
         {
